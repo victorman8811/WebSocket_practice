@@ -11,6 +11,7 @@ import java.net.URI;
 @ClientEndpoint
 public class Client {
     private Session session;
+    public String data;
 
     public Client(URI uri) {
         try {
@@ -22,7 +23,7 @@ public class Client {
 
     @OnMessage
     public void onMessage(String message) {
-        System.out.println(message);
+        data = message;
     }
 
     public void sendMessage(String str) {
